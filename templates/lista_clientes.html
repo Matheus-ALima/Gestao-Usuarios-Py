@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table" c-reload=True>
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -7,14 +7,11 @@
         <th scope="col">Ações</th>
       </tr>
     </thead>
-    <tbody>
-        
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-    
+    <tbody id="lista_clientes">
+
+        {% for cliente in clientes %}
+           {% include 'item_cliente.html' %}
+        {% endfor %}
+
     </tbody>
   </table>
