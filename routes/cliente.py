@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, render_template
 
 #inicia o blueprint
 cliente_route = Blueprint('cliente', __name__)
@@ -6,7 +6,7 @@ cliente_route = Blueprint('cliente', __name__)
 #definindo as rotas
 @cliente_route.route('/')
 def lista_clientes():
-    pass
+    return render_template('lista_clientes.html')
 
 @cliente_route.route('/', methods=['POST'])
 def inserir_cliente():
@@ -14,20 +14,20 @@ def inserir_cliente():
 
 @cliente_route.route('/new')
 def form_cliente():
-    pass
+    return render_template('form_cliente.html')
 
 @cliente_route.route('/<int:cliente_id>')
 def detalhe_cliente(cliente_id):
-    pass
+    return render_template('detalhe_cliente.html')
 
 @cliente_route.route('/<int:cliente_id>/edit')
 def form_editaCliente(cliente_id):
-    pass
+    return render_template('form_editaCliente.html')
 
 @cliente_route.route('/<int:cliente_id>/update', methods=['PUT'])
-def atualiza_dadoCliente(cliente_id):
+def atualizar_dadoCliente(cliente_id):
     pass
 
 @cliente_route.route('/<int:cliente_id>/delete', methods=['DELETE'])
-def deleta_cliente(cliente_id):
+def deletar_cliente(cliente_id):
     pass
